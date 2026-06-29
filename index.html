@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadia Rapheal</title>
+  <meta name="description" content="Nadia Rapheal — Computer Science undergraduate at Winston-Salem State University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    img { display: block; max-width: 100%; }
+
+    :root {
+      --bg:        #FAFAF7;
+      --surface:   #FFFFFF;
+      --text:      #1E1E22;
+      --muted:     #6B6B73;
+      --subtle:    #A0A0A8;
+      --border:    #E5E3DD;
+      --accent:    #2E4A7B;   /* deep navy */
+      --accent-bg: #EAF0F8;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ─────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 5rem;
+    }
+
+    /* ── Header / Hero ──────────────────── */
+    header {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .photo-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent-bg);
+      flex-shrink: 0;
+    }
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--subtle);
+    }
+    .header-text { flex: 1; min-width: 0; }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+    }
+    .pronouns {
+      font-size: 0.78rem;
+      color: var(--subtle);
+      font-weight: 400;
+      margin-left: 0.5rem;
+    }
+    .title {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.83rem;
+      color: var(--subtle);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .location svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    /* ── Links row ──────────────────────── */
+    .links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+      background: var(--surface);
+      transition: all 0.15s;
+    }
+    .link-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .link-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Sections ───────────────────────── */
+    section {
+      margin-bottom: 2.75rem;
+    }
+    h2 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── About / Profile ────────────────── */
+    .profile-text {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── Entry cards (experience / projects / education) ── */
+    .entry {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+    .entry-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .entry-date {
+      font-size: 0.78rem;
+      color: var(--subtle);
+      font-family: 'JetBrains Mono', monospace;
+      flex-shrink: 0;
+    }
+    .entry-org {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+    .entry-bullets {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.7rem;
+    }
+    .entry-bullets li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0.4rem;
+    }
+    .entry-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .entry-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-style: italic;
+    }
+
+    /* ── Skills grid ────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+    }
+    .skill-group h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .chip {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.6rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .soft-list {
+      list-style: none;
+      padding: 0;
+    }
+    .soft-list li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding: 0.2rem 0;
+    }
+
+    /* ── Certification ──────────────────── */
+    .cert-card {
+      background: var(--accent-bg);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+    }
+    .cert-issuer {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+    .cert-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--subtle);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Footer ─────────────────────────── */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--subtle);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Responsive ─────────────────────── */
+    @media (max-width: 600px) {
+      .container { padding: 2.5rem 1.25rem 3rem; }
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.25rem;
+      }
+      .links { justify-content: center; }
+      .entry-header { flex-direction: column; gap: 0.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ════════ HEADER ════════ -->
+    <header>
+     <img src="photo.jpg" alt="Nadia Rapheal" style="width:100%;height:100%;object-fit:cover;" />
+      <div class="photo-wrap">
+        <div class="photo-placeholder">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="header-text">
+        <h1>Nadia Rapheal <span class="pronouns">she/her</span></h1>
+        <p class="title">Computer Science undergraduate · Legal Studies minor</p>
+        <p class="location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s-8-7.5-8-13a8 8 0 1 1 16 0c0 5.5-8 13-8 13z"/>
+            <circle cx="12" cy="9" r="3"/>
+          </svg>
+          High Point, North Carolina
+        </p>
+
+        <div class="links">
+          <a class="link-btn" href="https://github.com/n0di0" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            GitHub
+          </a>
+          <a class="link-btn" href="https://www.linkedin.com/in/nadiarapheal/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zM20 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V8h3v1.77c1.4-2.59 7-2.78 7 2.48V19z"/></svg>
+            LinkedIn
+          </a>
+          <a class="link-btn" href="mailto:nrapheal04@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ════════ ABOUT ════════ -->
+    <section>
+      <h2>// About</h2>
+      <p class="profile-text">
+        I'm a technologically inclined university student with a strong background
+        in computer science and cybersecurity, pursuing opportunities in software
+        development and technical support. I have experience across software
+        development, networking, cybersecurity, and troubleshooting in Windows
+        environments.
+      </p>
+    </section>
+
+
+    <!-- ════════ EXPERIENCE ════════ -->
+    <section>
+      <h2>// Experience</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <p class="entry-title">Information Technology Apprentice</p>
+          <p class="entry-date">2022 — 2023</p>
+        </div>
+        <p class="entry-org">Guilford County Government · Greensboro, NC</p>
+        <ul class="entry-bullets">
+          <li>Gained firsthand experience across multiple areas of Guilford County's IT department.</li>
+          <li>Learned problem-solving technical skills, handled support tickets, and answered calls alongside the HelpDesk team.</li>
+          <li>Imaged laptops, installed software, and troubleshot hardware issues for county employees with the Desktop Support team.</li>
+          <li>Resolved VoIP and Cisco Softphone issues, learned CLI for programming Cisco and Dell switches, and supported network mapping and configuration for the Guilford County Veteran's Department.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ════════ PROJECTS ════════ -->
+    <section>
+      <h2>// Projects</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <p class="entry-title">Research Presenter &amp; Cybersecurity Challenge Team Trainer</p>
+          <p class="entry-date">2026</p>
+        </div>
+        <p class="entry-org">A.D.M.I. Research Symposium · Orangeburg, SC</p>
+        <ul class="entry-bullets">
+          <li>Presented research on the Digital Divide and its growing impact from the AI-driven paradigm shift, at an AI-focused undergraduate symposium.</li>
+          <li>Spearheaded cross-training for CTF Cybersecurity Challenge teammates in web exploitation, cryptography, reverse engineering, binary exploitation, and digital forensics.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <p class="entry-title">Nationwide Agile Development Hackathon — Team Leader</p>
+          <p class="entry-date">2026</p>
+        </div>
+        <p class="entry-org">Winston-Salem State University · Winston-Salem, NC</p>
+        <ul class="entry-bullets">
+          <li>Created and led a team of four students through planning, analysis, design, dataset gathering, and presentation of a software project in under 24 hours.</li>
+          <li>Applied Agile and Lean frameworks to coordinate and optimize workflow, ensuring equitable contribution across the team.</li>
+          <li>Pitched the app idea in front of WSSU alumni and current Nationwide Software Development employees.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ════════ EDUCATION ════════ -->
+    <section>
+      <h2>// Education</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <p class="entry-title">Winston-Salem State University</p>
+        </div>
+        <p class="entry-org">B.S. in Computer Science · Legal Studies minor</p>
+        <p class="entry-meta">Secretary of RAMScode · Vice President of CyberRamz</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <p class="entry-title">Forsyth Technical Community College</p>
+        </div>
+        <p class="entry-org">A.A.S. in Cybersecurity</p>
+        <p class="entry-meta">Member of the Davis iTec Cybersecurity Center</p>
+      </div>
+    </section>
+
+
+    <!-- ════════ SKILLS ════════ -->
+    <section>
+      <h2>// Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Technical</h3>
+          <div class="chip-row">
+            <span class="chip">Java</span>
+            <span class="chip">Python</span>
+            <span class="chip">Linux CLI</span>
+            <span class="chip">Windows CLI</span>
+            <span class="chip">Git / GitHub</span>
+            <span class="chip">Windows 11 Enterprise</span>
+            <span class="chip">Artificial Intelligence</span>
+            <span class="chip">Apache NetBeans</span>
+            <span class="chip">PyCharm</span>
+            <span class="chip">BlueJ</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Soft skills</h3>
+          <ul class="soft-list">
+            <li>Problem-solving &amp; analytical thinking</li>
+            <li>Leadership in technical environments</li>
+            <li>Communicating technical ideas</li>
+            <li>Collaboration</li>
+            <li>Agile &amp; Lean methodologies</li>
+            <li>Managing multifaceted teams</li>
+            <li>Time management on dynamic agendas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════ CERTIFICATIONS ════════ -->
+    <section>
+      <h2>// Certifications</h2>
+      <div class="cert-card">
+        <div>
+          <p class="cert-name">Google AI</p>
+          <p class="cert-issuer">Google · Issued June 2026</p>
+        </div>
+        <p class="cert-id">ID: D9J2EODVG0QE</p>
+      </div>
+    </section>
+
+
+    <footer>
+      © 2026 Nadia Rapheal · Built with HTML
+    </footer>
+
+  </div>
+
+</body>
+</html>
