@@ -20,6 +20,6 @@ I'm a CS undergrad at WSSU working across cyber, programming, hardware, law, and
 
 <br>
 
-I like making things.
+I like making things!!
 
  [LinkedIn](https://www.linkedin.com/in/nadiarapheal/) | [Portfolio](https://n0di0.github.io/n0di0/)
