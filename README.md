@@ -17,6 +17,7 @@ I'm a CS undergrad at WSSU working across cyber, programming, hardware, law, and
 - Researching the digital and algorithmic divide
 - Studying digital surveillance and tech policy
 - Practicing for cyber CTF competitions
+- Taking a bunch of classes!!
 
 <br>
 
