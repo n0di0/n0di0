@@ -9,7 +9,7 @@ I'm a CS undergrad at WSSU working across cyber, programming, hardware, law, and
 - Hardware - building AI assisted cyber hack-the-boxes with Raspberry Pis
 
 **A current favorite repo of mine is:**
-- The ["ECG Data Infrastructure"](https://github.com/n0di0/wfu-ecg-buildathon-data) repository, where I stored all of the download, processing, filtering, and additional scripts, splits, and tests for my team in the WFU School of Medicine CAIR AI Build-A-Thon in October. *Go Heartbreakers!*
+- The ["ECG Data Infrastructure"](https://github.com/n0di0/wfu-ecg-buildathon-data) repository, where I stored all of the download, processing, filtering, and additional scripts, splits, and tests for my team in the WFU School of Medicine CAIR AI Build-A-Thon in October. *Go Heartbreakers!* 🥇
 
 **I am currently:**
 - Implementing a Computer Science / Information Technology Lyceum student organization 
