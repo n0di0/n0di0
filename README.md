@@ -17,7 +17,6 @@ I'm a CS undergrad at WSSU working across cyber, programming, hardware, law, and
 - Learning how eXplainable AI can be applied in model creation
 - Creating a curriculum to teach Hour of AI with Code.org
 - Training with the cyberRAMZ for the ADMI 2027 CTF
-- Preparing for the BESmart Hackathon in November
 - Taking a bunch of classes
 
 <br>
